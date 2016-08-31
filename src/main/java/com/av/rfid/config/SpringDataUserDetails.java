@@ -15,6 +15,11 @@ import com.av.rfid.data.entity.User;
 import com.av.rfid.data.entity.UserRole;
 
 public class SpringDataUserDetails implements UserDetails {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private static final Logger log = LoggerFactory.getLogger(SpringDataUserDetails.class);
 
 	private List<UserRole> userRoles;
