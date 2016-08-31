@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Security Example</title>
+<link rel="stylesheet" type="text/css" media="screen"
+	th:href="@{css/loginstyle.css}" />
+</head>
+<body>
+	<div id="login">
+		<div th:if="${param.error}">Invalid username and password.</div>
+		<div th:if="${param.logout}">You have been logged out.</div>
+		<div th:if="${param.message}">${param.message}</div>
+		<form th:action="@{/login}" method="post">
+
+			<div class="imgcontainer">
+				<img src="images/rfid.png" alt="Avatar" class="avatar" />
+			</div>
+
+			<div class="container">
+				<label><b>Username</b></label> <input type="text"
+					placeholder="Enter Username" name="username" required="required" />
+
+				<label><b>Password</b></label> <input type="password"
+					placeholder="Enter Password" name="password" required="required" />
+
+				<button type="submit">Login</button>
+				<input type="checkbox" checked="checked" name="rememberme"/> Remember me
+			</div>
+
+			<div class="container" style="background-color: #f1f1f1">
+				<span class="psw">Forgot <a href="forgotPassword">password?</a></span>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
